@@ -1,0 +1,183 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 46 40% 97%;
+    --foreground: 191 50% 15%;
+
+    --card: 46 30% 98%;
+    --card-foreground: 191 50% 15%;
+
+    --popover: 46 30% 98%;
+    --popover-foreground: 191 50% 15%;
+
+    --primary: 191 70% 35%;
+    --primary-foreground: 46 80% 95%;
+
+    --secondary: 44 85% 75%;
+    --secondary-foreground: 191 50% 20%;
+
+    --muted: 46 25% 92%;
+    --muted-foreground: 191 30% 45%;
+
+    --accent: 183 65% 60%;
+    --accent-foreground: 191 50% 15%;
+
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 46 80% 95%;
+
+    --border: 46 20% 88%;
+    --input: 46 20% 88%;
+    --ring: 191 70% 35%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 191 40% 8%;
+    --foreground: 46 60% 92%;
+
+    --card: 191 50% 12%;
+    --card-foreground: 46 60% 92%;
+
+    --popover: 191 50% 12%;
+    --popover-foreground: 46 60% 92%;
+
+    --primary: 44 75% 65%;
+    --primary-foreground: 191 60% 10%;
+
+    --secondary: 191 30% 18%;
+    --secondary-foreground: 46 60% 92%;
+
+    --muted: 191 30% 15%;
+    --muted-foreground: 46 40% 70%;
+
+    --accent: 183 45% 35%;
+    --accent-foreground: 46 60% 92%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 46 60% 92%;
+
+    --border: 191 30% 22%;
+    --input: 191 30% 22%;
+    --ring: 44 75% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .container {
+    @apply px-4 md:px-6 lg:px-8 mx-auto;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-primary-foreground rounded-full px-6 py-2.5 font-medium transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 active:scale-[0.98];
+  }
+  
+  .section {
+    @apply py-12 md:py-16 lg:py-24;
+  }
+  
+  .glass-card {
+    @apply bg-white/70 dark:bg-black/30 backdrop-blur-lg border border-white/20 dark:border-white/10 rounded-xl shadow-lg;
+  }
+  
+  .wave-animation {
+    animation: wave 12s linear infinite;
+    animation-delay: -2s;
+    transform-origin: center bottom;
+  }
+  
+  .page-transition-enter {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  
+  .page-transition-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 400ms, transform 400ms;
+  }
+  
+  .page-transition-exit {
+    opacity: 1;
+  }
+  
+  .page-transition-exit-active {
+    opacity: 0;
+    transition: opacity 300ms;
+  }
+
+  /* Custom Scrollbar Styles */
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--primary) / 0.3) transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 4px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, hsl(var(--primary) / 0.6) 0%, hsl(var(--primary) / 0.4) 100%);
+    border-radius: 4px;
+    border: 1px solid hsl(var(--primary) / 0.2);
+    transition: all 0.3s ease;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, hsl(var(--primary) / 0.8) 0%, hsl(var(--primary) / 0.6) 100%);
+    transform: scaleX(1.2);
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:active {
+    background: linear-gradient(180deg, hsl(var(--primary)) 0%, hsl(var(--primary) / 0.8) 100%);
+  }
+
+  /* Hide scrollbar buttons (up/down arrows) */
+  .custom-scrollbar::-webkit-scrollbar-button {
+    display: none;
+  }
+
+  /* Dark mode adjustments */
+  .dark .custom-scrollbar {
+    scrollbar-color: hsl(var(--primary) / 0.4) transparent;
+  }
+
+  .dark .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, hsl(var(--primary) / 0.7) 0%, hsl(var(--primary) / 0.5) 100%);
+    border: 1px solid hsl(var(--primary) / 0.3);
+  }
+
+  .dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, hsl(var(--primary) / 0.9) 0%, hsl(var(--primary) / 0.7) 100%);
+  }
+
+  .dark .custom-scrollbar::-webkit-scrollbar-thumb:active {
+    background: linear-gradient(180deg, hsl(var(--primary)) 0%, hsl(var(--primary) / 0.9) 100%);
+  }
+}
