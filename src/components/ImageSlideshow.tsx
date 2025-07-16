@@ -159,7 +159,7 @@ export default function ImageSlideshow({ images, alt, className }: ImageSlidesho
 
         {/* Image counter */}
         {images.length > 1 && (
-          <div className="absolute top-4 right-4 bg-black/50 text-white px-2 py-1 rounded text-sm">
+          <div className="absolute top-4 left-4 bg-black/50 text-white px-2 py-1 rounded text-sm">
             {currentIndex + 1} / {images.length}
           </div>
         )}
