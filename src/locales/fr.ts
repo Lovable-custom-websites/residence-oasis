@@ -114,7 +114,18 @@ export const fr = {
       features: "caractéristiques",
       more: "plus",
       allTypes: "Tous les types"
-    }
+    },
+    availability: "Calendrier de disponibilité",
+    available: "Disponible",
+    unavailable: "Indisponible",
+    loadingCalendar: "Chargement du calendrier",
+    loadingData: "Chargement des disponibilité et notes...",
+    saving: "Enregistrement...",
+    loadingNotes: "Chargement des notes...",
+    noNotesForDate: "Aucune note pour cette date.",
+    noNotesAvailable: "Aucune note disponible.",
+    addNote: "Ajouter note...",
+    deleteNote: "Supprimer la note",
   },
   gallery: {
     title: "Galerie Photo",

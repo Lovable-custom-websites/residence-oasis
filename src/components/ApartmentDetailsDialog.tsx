@@ -5,6 +5,7 @@ import {
   FaHome
 } from "react-icons/fa";
 import ImageSlideshow from "./ImageSlideshow";
+import CalendarAvailability from "./CalendarAvailability";
 import {
   Dialog,
   DialogContent,
@@ -17,6 +18,7 @@ import { Separator } from "@/components/ui/separator";
 import { getFeatureIcon } from "@/lib/iconUtils";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ApartmentProps } from "./ApartmentCard";
+import { useState } from "react";
 
 interface ApartmentDetailsDialogProps {
   apartment: ApartmentProps | null;
@@ -32,6 +34,7 @@ export default function ApartmentDetailsDialog({
   onOpenChange
 }: ApartmentDetailsDialogProps) {
   const { t } = useLanguage();
+  const [calendarOpen, setCalendarOpen] = useState(false);
 
   if (!apartment) return null;
 
@@ -141,7 +144,7 @@ export default function ApartmentDetailsDialog({
             <h3 className="text-lg font-semibold mb-3">{t.apartments.conditionsText}</h3>
             <div className="grid grid-cols-1 md:grid-cols-2  md:grid-cols-3 gap-2">
               {t.apartments.conditions.map((condition, index) => (
-                <div className="animate-fade-in" style={{ animationDelay: `${(index + 1) * 50}ms` }}>
+                <div key={index} className="animate-fade-in" style={{ animationDelay: `${(index + 1) * 50}ms` }}>
                 <Badge variant="outline" className="w-full justify-start">
                   {condition}
                 </Badge>
@@ -151,6 +154,20 @@ export default function ApartmentDetailsDialog({
           </div>
         </div>
       </DialogContent>
+      {/* Calendar Popup Dialog */}
+      <Dialog open={calendarOpen} onOpenChange={setCalendarOpen}>
+        <DialogContent className="max-w-md w-full">
+          <DialogHeader>
+            <DialogTitle>{t.apartments.availability || 'Availability'}</DialogTitle>
+          </DialogHeader>
+          <CalendarAvailability 
+            apartmentId={apartment.id} 
+            label={t.apartments.availability || 'Availability'}
+            availableLabel={t.apartments.available || 'Available'}
+            unavailableLabel={t.apartments.unavailable || 'Unavailable'}
+          />
+        </DialogContent>
+      </Dialog>
     </Dialog>
   );
 }

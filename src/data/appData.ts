@@ -125,9 +125,9 @@ export const allApartments: ApartmentProps[] = [
     name: "apartment7_name",
     description: "apartment7_description",
     priceeur: 120,
-    pricedz: 20000,
+    pricedz: 25000,
     capacity: 6,
-    size: 90,
+    size: 132,
     image: "/residence/assets/WIP/01.webp",
     images: [
       "/residence/assets/WIP/01.webp"
@@ -184,11 +184,11 @@ export const galleryImages = [
   { id: 27, src: '/residence/assets/6-F2/06.avif', alt: 'F2 Deluxe Double - Additional View 2', category: 'apartments' },
 
   // Common images
-  { id: 32, src: '/residence/assets/COMMON/01.avif', alt: 'Residence Overview', category: 'proximity' },
-  { id: 33, src: '/residence/assets/COMMON/02.avif', alt: 'Residence Entrance', category: 'proximity' },
-  { id: 34, src: '/residence/assets/COMMON/03.avif', alt: 'Residence Balcony', category: 'proximity' },
-  { id: 35, src: '/residence/assets/COMMON/04.avif', alt: 'Residence Terrace', category: 'proximity' },
-  { id: 36, src: '/residence/assets/COMMON/05.avif', alt: 'Residence Common Area', category: 'proximity' },
+  { id: 32, src: '/residence/assets/COMMON/01.avif', alt: 'Rusica Park', category: 'proximity' },
+  { id: 33, src: '/residence/assets/COMMON/02.avif', alt: 'Plage - Jeanne d\'Arc', category: 'proximity' },
+  { id: 34, src: '/residence/assets/COMMON/03.avif', alt: 'Rusica Park - Aquaparc', category: 'proximity' },
+  { id: 35, src: '/residence/assets/COMMON/04.avif', alt: 'Rusica Park', category: 'proximity' },
+  { id: 36, src: '/residence/assets/COMMON/05.avif', alt: 'Plage - Jeanne d\'Arc', category: 'proximity' },
 ];
 
 // Testimonials data
@@ -219,6 +219,15 @@ export const testimonials: Testimonial[] = [
     avatar: '/residence/assets/logo.avif',
     originalContent: 'Le logement était impeccable, très propre et conforme à la description ainsi qu\'aux photos. On s\'y sent tout de suite bien. L\'hôtel est très agréable, bien situé et parfaitement entretenu. Merci pour ce super séjour !',
     translatedContent: 'The accommodation was impeccable, very clean and in line with the description and photos. You feel at home right away. The hotel is very pleasant, well located and perfectly maintained. Thank you for this great stay!',
+    rating: 5
+  },
+  {
+    id: 3,
+    name: 'Keltoum',
+    location: 'France',
+    avatar: '/residence/assets/logo.avif',
+    originalContent: 'Nous avons passé un excellent séjour dans cette location !',
+    translatedContent: '',
     rating: 5
   },
 ];

@@ -114,7 +114,18 @@ export const en = {
       features: "features",
       more: "more",
       allTypes: "All types"
-    }
+    },
+    availability: "Availability Calendar",
+    available: "Available",
+    unavailable: "Unavailable",
+    loadingCalendar: "Loading Calendar",
+    loadingData: "Loading availability data and notes...",
+    saving: "Saving...",
+    loadingNotes: "Loading notes...",
+    noNotesForDate: "No notes for this date.",
+    noNotesAvailable: "No notes available.",
+    addNote: "Add note...",
+    deleteNote: "Delete note",
   },
   gallery: {
     title: "Photo Gallery",

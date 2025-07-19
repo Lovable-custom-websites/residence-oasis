@@ -8,11 +8,12 @@ import Apartments from "./pages/Apartments";
 import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
-import { LanguageProvider } from "./contexts/LanguageContext";
+import { LanguageProvider, useLanguage } from "./contexts/LanguageContext";
 
-const App = () => (
-  <TooltipProvider>
-    <LanguageProvider>
+const AppContent = () => {
+  const { language } = useLanguage();
+  return (
+    <div dir={language === "ar" ? "rtl" : "ltr"} lang={language}>
       <Toaster />
       <Sonner />
       <BrowserRouter basename="/residence">
@@ -25,6 +26,14 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
+    </div>
+  );
+};
+
+const App = () => (
+  <TooltipProvider>
+    <LanguageProvider>
+      <AppContent />
     </LanguageProvider>
   </TooltipProvider>
 );

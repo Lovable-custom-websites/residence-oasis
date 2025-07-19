@@ -48,7 +48,7 @@ export default function TestimonialsSection() {
 
   const onTouchEnd = () => {
     if (!touchStart || !touchEnd) return;
-    
+
     const distance = touchStart - touchEnd;
     const isLeftSwipe = distance > minSwipeDistance;
     const isRightSwipe = distance < -minSwipeDistance;
@@ -79,7 +79,7 @@ export default function TestimonialsSection() {
         </div>
 
         <div className="relative max-w-4xl mx-auto">
-          <div 
+          <div
             ref={containerRef}
             className="relative min-h-[400px] md:min-h-[250px]"
             onTouchStart={onTouchStart}

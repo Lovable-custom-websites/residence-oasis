@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import {
   FaUsers,
   FaExpand,
@@ -10,6 +10,8 @@ import { cn } from "@/lib/utils";
 import { getFeatureIcon } from "@/lib/iconUtils";
 import { useLanguage } from "@/contexts/LanguageContext";
 import ApartmentDetailsDialog from "./ApartmentDetailsDialog";
+import CalendarAvailability from "./CalendarAvailability";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 
 export interface ApartmentProps {
   id: string;
@@ -32,11 +34,21 @@ export default function ApartmentCard({ apartment }: { apartment: ApartmentProps
   const { t } = useLanguage();
   const [isHovered, setIsHovered] = useState(false);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-
+  const [calendarOpen, setCalendarOpen] = useState(false);
+  const [calendarLoading, setCalendarLoading] = useState(false);
   // Use translated name and description if available
   const translatedName = t.apartmentNames[apartment.name] || apartment.name;
 
   const translatedDescription = t.apartmentDescriptionsShort[apartment.description] || apartment.description;
+
+  const handleCalendarClick = () => {
+    setCalendarLoading(true);
+    // Simulate the time it takes to load calendar data
+    setTimeout(() => {
+      setCalendarLoading(false);
+      setCalendarOpen(true);
+    }, 800);
+  };
 
   return (
     <div
@@ -116,6 +128,15 @@ export default function ApartmentCard({ apartment }: { apartment: ApartmentProps
             {t.apartments.filters.viewDetails}
           </Button>
         </div>
+        <hr className="my-4" />
+        <div className="flex justify-center">
+          <Button
+            className="btn-primary bg-green-600 hover:bg-green-700 text-white"
+            onClick={handleCalendarClick}
+          >
+            {t.apartments.availability || 'Availability'}
+          </Button>
+        </div>
       </div>
 
       <ApartmentDetailsDialog
@@ -123,6 +144,33 @@ export default function ApartmentCard({ apartment }: { apartment: ApartmentProps
         isOpen={isDialogOpen}
         onOpenChange={setIsDialogOpen}
       />
+      {/* Loading Overlay */}
+      <Dialog open={calendarLoading} onOpenChange={() => {}}>
+        <DialogContent className="max-w-sm w-full">
+          <DialogHeader>
+            <DialogTitle>{t.apartments.loadingCalendar || 'Loading Calendar'}</DialogTitle>
+          </DialogHeader>
+          <div className="flex flex-col items-center justify-center py-8">
+            <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-gray-800 mb-6"></div>
+            <div className="text-gray-600 text-center">
+              <div className="text-sm text-gray-500">{t.apartments.loadingData || 'Loading availability data and notes...'}</div>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
+      <Dialog open={calendarOpen} onOpenChange={setCalendarOpen}>
+        <DialogContent className="max-w-3xl w-full max-h-[90vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle>{t.apartments.availability || 'Availability'}</DialogTitle>
+          </DialogHeader>
+          <CalendarAvailability
+            apartmentId={apartment.id}
+            label={t.apartments.availability || 'Availability'}
+            availableLabel={t.apartments.available || 'Available'}
+            unavailableLabel={t.apartments.unavailable || 'Unavailable'}
+          />
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

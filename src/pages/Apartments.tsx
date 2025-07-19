@@ -21,7 +21,7 @@ export default function Apartments() {
   const [typeFilter, setTypeFilter] = useState<string>("all");
   const [locationFilter, setLocationFilter] = useState<string>("all");
   const [priceMax, setPriceMax] = useState<number>(150);
-  const [priceDzdMax, setPriceDzdMax] = useState<number>(20000);
+  const [priceDzdMax, setPriceDzdMax] = useState<number>(25000);
 
   useEffect(() => {
     // Scroll to top when component mounts
@@ -146,9 +146,9 @@ export default function Apartments() {
                     {t.apartments.filters.priceRange}: ≤ DZD{priceDzdMax.toLocaleString()}
                   </label>
                   <Slider
-                    defaultValue={[20000]}
+                    defaultValue={[25000]}
                     min={8000}
-                    max={20000}
+                    max={25000}
                     step={500}
                     value={[priceDzdMax]}
                     onValueChange={([val]) => setPriceDzdMax(val)}
@@ -169,7 +169,7 @@ export default function Apartments() {
                   setTypeFilter("all");
                   setLocationFilter("all");
                   setPriceMax(150);
-                  setPriceDzdMax(20000);
+                  setPriceDzdMax(25000);
                 }}
               >
                 {t.apartments.filters.resetFilters}
@@ -199,7 +199,7 @@ export default function Apartments() {
                     setTypeFilter("all");
                     setLocationFilter("all");
                     setPriceMax(150);
-                    setPriceDzdMax(20000);
+                    setPriceDzdMax(25000);
                   }}
                 >
                   {t.apartments.filters.resetFilters}
