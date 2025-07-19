@@ -69,9 +69,14 @@ export const allApartments: ApartmentProps[] = [
     pricedz: 10000,
     capacity: 4,
     size: 33,
-    image: "/residence/assets/WIP/01.webp",
+    image: "/residence/assets/4-F2/01.avif",
     images: [
-      "/residence/assets/WIP/01.webp"
+      "/residence/assets/4-F2/01.avif",
+      "/residence/assets/4-F2/02.avif",
+      "/residence/assets/4-F2/03.avif",
+      "/residence/assets/4-F2/04.avif",
+      "/residence/assets/4-F2/05.avif",
+      "/residence/assets/4-F2/06.avif",
     ],
     location: "floor2",
     type: "F2",
