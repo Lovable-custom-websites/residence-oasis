@@ -57,6 +57,12 @@ export default function ApartmentCard({ apartment }: { apartment: ApartmentProps
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className="relative overflow-hidden h-64">
+        {/* Apartment Number Label */}
+        <div className="absolute top-4 right-4 z-10">
+          <div className="bg-white/90 backdrop-blur-sm text-gray-800 font-semibold text-sm px-3 py-1.5 rounded-full shadow-sm border border-white/20">
+            {apartment.id}
+          </div>
+        </div>
         <img
           src={apartment.image}
           alt={translatedName}

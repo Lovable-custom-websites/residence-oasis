@@ -180,6 +180,9 @@ export const galleryImages = [
   { id: 20, src: '/residence/assets/5-F2/06.avif', alt: 'F2 Double Classique - Additional View 2', category: 'apartments' },
   { id: 21, src: '/residence/assets/5-F2/07.avif', alt: 'F2 Double Classique - Additional View 3', category: 'apartments' },
 
+  // F2 Double Classique images
+  { id: 15, src: '/residence/assets/4-F2/01.avif', alt: 'F2 Double Classique - Chambre', category: 'apartments' },
+
   // F2 Deluxe Double images
   { id: 22, src: '/residence/assets/6-F2/01.avif', alt: 'F2 Deluxe Double - Living Room', category: 'apartments' },
   { id: 23, src: '/residence/assets/6-F2/02.avif', alt: 'F2 Deluxe Double - Kitchen', category: 'apartments' },
