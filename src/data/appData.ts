@@ -158,45 +158,45 @@ export const galleryImages = [
   { id: 4, src: '/residence/assets/1-STUDIO/04.avif', alt: 'Studio Deluxe - Bedroom Area', category: 'apartments' },
 
   // F2 Double Classique images
-  { id: 5, src: '/residence/assets/2-F2/01.avif', alt: 'F2 Double Classique - Living Room', category: 'apartments' },
-  { id: 6, src: '/residence/assets/2-F2/02.avif', alt: 'F2 Double Classique - Kitchen', category: 'apartments' },
-  { id: 7, src: '/residence/assets/2-F2/03.avif', alt: 'F2 Double Classique - Bedroom', category: 'apartments' },
-  { id: 8, src: '/residence/assets/2-F2/04.avif', alt: 'F2 Double Classique - Bathroom', category: 'apartments' },
+  { id: 21, src: '/residence/assets/2-F2/01.avif', alt: 'F2 Double Classique - Living Room', category: 'apartments' },
+  { id: 22, src: '/residence/assets/2-F2/02.avif', alt: 'F2 Double Classique - Kitchen', category: 'apartments' },
+  { id: 23, src: '/residence/assets/2-F2/03.avif', alt: 'F2 Double Classique - Bedroom', category: 'apartments' },
+  { id: 24, src: '/residence/assets/2-F2/04.avif', alt: 'F2 Double Classique - Bathroom', category: 'apartments' },
 
   // F2 Suite Jacuzzi images
-  { id: 9, src: '/residence/assets/3-F2/01.avif', alt: 'F2 Suite Jacuzzi - Living Room', category: 'apartments' },
-  { id: 10, src: '/residence/assets/3-F2/02.avif', alt: 'F2 Suite Jacuzzi - Kitchen', category: 'apartments' },
-  { id: 11, src: '/residence/assets/3-F2/03.avif', alt: 'F2 Suite Jacuzzi - Bedroom', category: 'apartments' },
-  { id: 12, src: '/residence/assets/3-F2/04.avif', alt: 'F2 Suite Jacuzzi - Bathroom', category: 'apartments' },
-  { id: 13, src: '/residence/assets/3-F2/05.avif', alt: 'F2 Suite Jacuzzi - Jacuzzi', category: 'apartments' },
-  { id: 14, src: '/residence/assets/3-F2/06.avif', alt: 'F2 Suite Jacuzzi - Additional View', category: 'apartments' },
+  { id: 31, src: '/residence/assets/3-F2/01.avif', alt: 'F2 Suite Jacuzzi - Living Room', category: 'apartments' },
+  { id: 32, src: '/residence/assets/3-F2/02.avif', alt: 'F2 Suite Jacuzzi - Kitchen', category: 'apartments' },
+  { id: 33, src: '/residence/assets/3-F2/03.avif', alt: 'F2 Suite Jacuzzi - Bedroom', category: 'apartments' },
+  { id: 34, src: '/residence/assets/3-F2/04.avif', alt: 'F2 Suite Jacuzzi - Bathroom', category: 'apartments' },
+  { id: 35, src: '/residence/assets/3-F2/05.avif', alt: 'F2 Suite Jacuzzi - Jacuzzi', category: 'apartments' },
+  { id: 36, src: '/residence/assets/3-F2/06.avif', alt: 'F2 Suite Jacuzzi - Additional View', category: 'apartments' },
 
   // F2 Double Classique images
-  { id: 15, src: '/residence/assets/5-F2/01.avif', alt: 'F2 Double Classique - Living Room', category: 'apartments' },
-  { id: 16, src: '/residence/assets/5-F2/02.avif', alt: 'F2 Double Classique - Kitchen', category: 'apartments' },
-  { id: 17, src: '/residence/assets/5-F2/03.avif', alt: 'F2 Double Classique - Bedroom', category: 'apartments' },
-  { id: 18, src: '/residence/assets/5-F2/04.avif', alt: 'F2 Double Classique - Bathroom', category: 'apartments' },
-  { id: 19, src: '/residence/assets/5-F2/05.avif', alt: 'F2 Double Classique - Additional View 1', category: 'apartments' },
-  { id: 20, src: '/residence/assets/5-F2/06.avif', alt: 'F2 Double Classique - Additional View 2', category: 'apartments' },
-  { id: 21, src: '/residence/assets/5-F2/07.avif', alt: 'F2 Double Classique - Additional View 3', category: 'apartments' },
+  { id: 41, src: '/residence/assets/5-F2/01.avif', alt: 'F2 Double Classique - Living Room', category: 'apartments' },
+  { id: 42, src: '/residence/assets/5-F2/02.avif', alt: 'F2 Double Classique - Kitchen', category: 'apartments' },
+  { id: 43, src: '/residence/assets/5-F2/03.avif', alt: 'F2 Double Classique - Bedroom', category: 'apartments' },
+  { id: 44, src: '/residence/assets/5-F2/04.avif', alt: 'F2 Double Classique - Bathroom', category: 'apartments' },
+  { id: 45, src: '/residence/assets/5-F2/05.avif', alt: 'F2 Double Classique - Additional View 1', category: 'apartments' },
+  { id: 46, src: '/residence/assets/5-F2/06.avif', alt: 'F2 Double Classique - Additional View 2', category: 'apartments' },
+  { id: 47, src: '/residence/assets/5-F2/07.avif', alt: 'F2 Double Classique - Additional View 3', category: 'apartments' },
 
   // F2 Double Classique images
-  { id: 15, src: '/residence/assets/4-F2/01.avif', alt: 'F2 Double Classique - Chambre', category: 'apartments' },
+  { id: 51, src: '/residence/assets/4-F2/01.avif', alt: 'F2 Double Classique - Chambre', category: 'apartments' },
 
   // F2 Deluxe Double images
-  { id: 22, src: '/residence/assets/6-F2/01.avif', alt: 'F2 Deluxe Double - Living Room', category: 'apartments' },
-  { id: 23, src: '/residence/assets/6-F2/02.avif', alt: 'F2 Deluxe Double - Kitchen', category: 'apartments' },
-  { id: 24, src: '/residence/assets/6-F2/03.avif', alt: 'F2 Deluxe Double - Bedroom', category: 'apartments' },
-  { id: 25, src: '/residence/assets/6-F2/04.avif', alt: 'F2 Deluxe Double - Bathroom', category: 'apartments' },
-  { id: 26, src: '/residence/assets/6-F2/05.avif', alt: 'F2 Deluxe Double - Additional View 1', category: 'apartments' },
-  { id: 27, src: '/residence/assets/6-F2/06.avif', alt: 'F2 Deluxe Double - Additional View 2', category: 'apartments' },
+  { id: 61, src: '/residence/assets/6-F2/01.avif', alt: 'F2 Deluxe Double - Living Room', category: 'apartments' },
+  { id: 62, src: '/residence/assets/6-F2/02.avif', alt: 'F2 Deluxe Double - Kitchen', category: 'apartments' },
+  { id: 63, src: '/residence/assets/6-F2/03.avif', alt: 'F2 Deluxe Double - Bedroom', category: 'apartments' },
+  { id: 64, src: '/residence/assets/6-F2/04.avif', alt: 'F2 Deluxe Double - Bathroom', category: 'apartments' },
+  { id: 65, src: '/residence/assets/6-F2/05.avif', alt: 'F2 Deluxe Double - Additional View 1', category: 'apartments' },
+  { id: 66, src: '/residence/assets/6-F2/06.avif', alt: 'F2 Deluxe Double - Additional View 2', category: 'apartments' },
 
   // Common images
-  { id: 32, src: '/residence/assets/COMMON/01.avif', alt: 'Rusica Park', category: 'proximity' },
-  { id: 33, src: '/residence/assets/COMMON/02.avif', alt: 'Plage - Jeanne d\'Arc', category: 'proximity' },
-  { id: 34, src: '/residence/assets/COMMON/03.avif', alt: 'Rusica Park - Aquaparc', category: 'proximity' },
-  { id: 35, src: '/residence/assets/COMMON/04.avif', alt: 'Rusica Park', category: 'proximity' },
-  { id: 36, src: '/residence/assets/COMMON/05.avif', alt: 'Plage - Jeanne d\'Arc', category: 'proximity' },
+  { id: 91, src: '/residence/assets/COMMON/01.avif', alt: 'Rusica Park', category: 'proximity' },
+  { id: 92, src: '/residence/assets/COMMON/02.avif', alt: 'Plage - Jeanne d\'Arc', category: 'proximity' },
+  { id: 93, src: '/residence/assets/COMMON/03.avif', alt: 'Rusica Park - Aquaparc', category: 'proximity' },
+  { id: 94, src: '/residence/assets/COMMON/04.avif', alt: 'Rusica Park', category: 'proximity' },
+  { id: 95, src: '/residence/assets/COMMON/05.avif', alt: 'Plage - Jeanne d\'Arc', category: 'proximity' },
 ];
 
 // Testimonials data
