@@ -86,7 +86,8 @@ export default function CalendarAvailability({ apartmentId, label, availableLabe
         .select('date')
         .eq('apartment_id', apartmentId);
       if (!error && data) {
-        setUnavailableDates(data.map((row: { date: string }) => new Date(row.date)));
+        const dates = data.map((row: { date: string }) => new Date(row.date));
+        setUnavailableDates(dates);
       } else {
         console.error('Error fetching unavailable dates:', error);
         setUnavailableDates([]);
@@ -144,11 +145,13 @@ export default function CalendarAvailability({ apartmentId, label, availableLabe
 
   // Handle day click for admin multi-select
   const onClickDay = (date: Date) => {
-    if (!isAdmin) return;
     const iso = date.toISOString().slice(0, 10);
-    setSelectedDates(prev =>
-      prev.includes(iso) ? prev.filter(d => d !== iso) : [...prev, iso]
-    );
+    // Only allow admin to select dates for multi-selection
+    if (isAdmin) {
+      setSelectedDates(prev =>
+        prev.includes(iso) ? prev.filter(d => d !== iso) : [...prev, iso]
+      );
+    }
   };
 
   // Toggle availability for selected dates
@@ -219,7 +222,13 @@ export default function CalendarAvailability({ apartmentId, label, availableLabe
     if (view === 'month') {
       if (date.getFullYear() < minYear || date.getFullYear() > maxYear) return true;
       if (date < today) return true;
-      return !isAdmin && unavailableDates.some(d => d.toDateString() === date.toDateString());
+      // For admin users, allow selection of unavailable dates for management
+      // For regular users, disable unavailable dates
+      if (!isAdmin) {
+        const dateIso = date.toISOString().slice(0, 10);
+        return unavailableDates.some(d => d.toISOString().slice(0, 10) === dateIso);
+      }
+      return false;
     }
     if (view === 'year') {
       if (date.getFullYear() < minYear || date.getFullYear() > maxYear) return true;
