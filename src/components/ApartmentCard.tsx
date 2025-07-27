@@ -159,22 +159,24 @@ export default function ApartmentCard({ apartment }: { apartment: ApartmentProps
           <div className="flex flex-col items-center justify-center py-8">
             <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-gray-800 mb-6"></div>
             <div className="text-gray-600 text-center">
-              <div className="text-sm text-gray-500">{t.apartments.loadingData || 'Loading availability data and notes...'}</div>
+              <div className="text-sm text-gray-500">{t.apartments.loadingData || 'Loading availabilities...'}</div>
             </div>
           </div>
         </DialogContent>
       </Dialog>
       <Dialog open={calendarOpen} onOpenChange={setCalendarOpen}>
-        <DialogContent className="max-w-3xl w-full max-h-[90vh] overflow-y-auto">
-          <DialogHeader>
-            <DialogTitle>{t.apartments.availability || 'Availability'}</DialogTitle>
+        <DialogContent className="w-fit max-w-[95vw] p-0">
+          <DialogHeader className="px-4 py-3 text-center sm:text-center">
+            <DialogTitle className="text-center sm:text-center">{t.apartments.availability || 'Availability'}</DialogTitle>
           </DialogHeader>
-          <CalendarAvailability
-            apartmentId={apartment.id}
-            label={t.apartments.availability || 'Availability'}
-            availableLabel={t.apartments.available || 'Available'}
-            unavailableLabel={t.apartments.unavailable || 'Unavailable'}
-          />
+          <div className="px-4 pb-4">
+            <CalendarAvailability
+              apartmentId={apartment.id}
+              label={t.apartments.availability || 'Availability'}
+              availableLabel={t.apartments.available || 'Available'}
+              unavailableLabel={t.apartments.unavailable || 'Unavailable'}
+            />
+          </div>
         </DialogContent>
       </Dialog>
     </div>

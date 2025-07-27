@@ -49,7 +49,7 @@ export const en = {
     },
     featuredApartments: {
       subtitle: "Our Accommodations",
-      title: "★ Featured Apartments ★",
+      title: "★ Top Apartments ★",
       description: "Discover our most popular accommodation options, each offering a perfect blend of comfort, style and elegance.",
       viewAll: "View All Apartments"
     },
@@ -119,13 +119,8 @@ export const en = {
     available: "Available",
     unavailable: "Unavailable",
     loadingCalendar: "Loading Calendar",
-    loadingData: "Loading availability data and notes...",
+    loadingData: "Loading availabilities...",
     saving: "Saving...",
-    loadingNotes: "Loading notes...",
-    noNotesForDate: "No notes for this date.",
-    noNotesAvailable: "No notes available.",
-    addNote: "Add note...",
-    deleteNote: "Delete note",
   },
   gallery: {
     title: "Photo Gallery",

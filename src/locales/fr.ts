@@ -49,7 +49,7 @@ export const fr = {
     },
     featuredApartments: {
       subtitle: "Nos Hébergements",
-      title: "★ Appartements Vedettes ★",
+      title: "★ Top Appartements ★",
       description: "Découvrez nos options d'hébergement les plus populaires, chacune offrant un mélange parfait de confort, de style et d'élégance.",
       viewAll: "Voir Tous les Appartements"
     },
@@ -119,13 +119,8 @@ export const fr = {
     available: "Disponible",
     unavailable: "Indisponible",
     loadingCalendar: "Chargement du calendrier",
-    loadingData: "Chargement des disponibilité et notes...",
+    loadingData: "Chargement des disponibilité...",
     saving: "Enregistrement...",
-    loadingNotes: "Chargement des notes...",
-    noNotesForDate: "Aucune note pour cette date.",
-    noNotesAvailable: "Aucune note disponible.",
-    addNote: "Ajouter note...",
-    deleteNote: "Supprimer la note",
   },
   gallery: {
     title: "Galerie Photo",
