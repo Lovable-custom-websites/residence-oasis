@@ -5,6 +5,18 @@ export const en = {
     gallery: "Gallery",
     contact: "Contact"
   },
+  apartmentNumber: {
+    prefix: "Apartment",
+    numero: "N°",
+    appartement: "Apartment",
+    "1": "Apartment N°1",
+    "2": "Apartment N°2",
+    "3": "Apartment N°3",
+    "4": "Apartment N°4",
+    "5": "Apartment N°5",
+    "6": "Apartment N°6",
+    "7": "Apartment N°7"
+  },
   hero: {
     subtitle: "MODERN ACCOMMODATIONS NEAR THE SEA",
     title: "Discover the Coast of Skikda",
@@ -87,6 +99,7 @@ export const en = {
   },
   apartments: {
     title: "Our Apartments",
+    or: "or",
     subtitle: "Discover our selection of accommodations that meet all preferences",
     conditionsText: "Terms of Use",
     conditions: ["No smoking indoors", "Pets not allowed", "No events or parties", "No noise between 10 PM and 7 AM", "Respect for internal regulations", "Presentation of family record book (couples)"],

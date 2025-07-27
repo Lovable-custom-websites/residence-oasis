@@ -47,10 +47,18 @@ export default function ApartmentDetailsDialog({
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto custom-scrollbar">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-bold">{translatedName}</DialogTitle>
+          <div className="flex items-center justify-between gap-2 md:gap-4">
+            <DialogTitle className="text-lg md:text-2xl font-bold flex-1 min-w-0 text-left">
+              {translatedName}
+            </DialogTitle>
+            <Badge variant="secondary" className="text-sm md:text-lg font-semibold px-2 md:px-4 py-1 md:py-2 flex-shrink-0 mr-4">
+              {t.apartmentNumber[apartment.id as keyof typeof t.apartmentNumber] || `${t.apartmentNumber.appartement} ${t.apartmentNumber.numero} ${apartment.id}`}
+            </Badge>
+          </div>
         </DialogHeader>
 
         <div className="space-y-6">
+
           {/* Image Slideshow */}
           <ImageSlideshow
             images={apartment.images}

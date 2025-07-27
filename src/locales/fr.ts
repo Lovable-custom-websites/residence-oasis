@@ -5,6 +5,18 @@ export const fr = {
     gallery: "Galerie",
     contact: "Contact"
   },
+  apartmentNumber: {
+    prefix: "Appartement",
+    numero: "N°",
+    appartement: "Appartement",
+    "1": "Appartement N°1",
+    "2": "Appartement N°2",
+    "3": "Appartement N°3",
+    "4": "Appartement N°4",
+    "5": "Appartement N°5",
+    "6": "Appartement N°6",
+    "7": "Appartement N°7"
+  },
   hero: {
     subtitle: "HÉBERGEMENTS MODERNES PROCHES DE LA MER",
     title: "Découvrez la côte de Skikda",
@@ -87,6 +99,7 @@ export const fr = {
   },
   apartments: {
     title: "Nos Appartements",
+    or: "ou",
     subtitle: "Découvrez notre sélection d'hébergements qui répondent à toutes les préférences",
     conditionsText: "Conditions d'utilisation",
     conditions: ["Interdiction de fumer à l'intérieur", "Animaux de compagnie interdits", "Pas d'événements ou de fêtes", "Pas de bruit entre 22h et 7h", "Respect du règlement intérieur", "Présentation du livret de famille (couples)"],

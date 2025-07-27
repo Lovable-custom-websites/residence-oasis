@@ -58,9 +58,9 @@ export default function ApartmentCard({ apartment }: { apartment: ApartmentProps
     >
       <div className="relative overflow-hidden h-64">
         {/* Apartment Number Label */}
-        <div className="absolute top-4 right-4 z-10">
-          <div className="bg-white/90 backdrop-blur-sm text-gray-800 font-semibold text-sm px-3 py-1.5 rounded-full shadow-sm border border-white/20">
-            {apartment.id}
+        <div className="absolute top-4 left-4 z-10">
+          <div className="bg-secondary text-secondary-foreground font-semibold text-xs px-2 py-1 rounded-full shadow-sm border border-secondary/20">
+            {t.apartmentNumber[apartment.id as keyof typeof t.apartmentNumber] || `${t.apartmentNumber.appartement} ${t.apartmentNumber.numero} ${apartment.id}`}
           </div>
         </div>
         <img
@@ -118,24 +118,21 @@ export default function ApartmentCard({ apartment }: { apartment: ApartmentProps
           )}
         </div>
 
-        <div className="flex items-end justify-between pt-2">
-          <div>
-            <span className="text-xl font-bold">€{apartment.priceeur}</span>
-            <span className="text-muted-foreground text-sm"> / {t.booking.summary.night}</span>
-          </div>
-          <div>
-            <span className="text-xl font-bold">DZD{apartment.pricedz}</span>
-            <span className="text-muted-foreground text-sm"> / {t.booking.summary.night}</span>
-          </div>
+        <div className="flex items-center justify-center pt-2">
+          <span className="text-xl font-bold">€{apartment.priceeur}</span>
+          <span className="text-muted-foreground text-sm ml-1">/ {t.booking.summary.night}</span>
+          <span className="text-muted-foreground text-sm font-medium mx-6">{t.apartments.or || 'ou'}</span>
+          <span className="text-xl font-bold">DZD{apartment.pricedz}</span>
+          <span className="text-muted-foreground text-sm ml-1">/ {t.booking.summary.night}</span>
+        </div>
+        <hr className="my-4" />
+        <div className="flex justify-center gap-4">
           <Button
             className="btn-primary"
             onClick={() => setIsDialogOpen(true)}
           >
             {t.apartments.filters.viewDetails}
           </Button>
-        </div>
-        <hr className="my-4" />
-        <div className="flex justify-center">
           <Button
             className="btn-primary bg-green-600 hover:bg-green-700 text-white"
             onClick={handleCalendarClick}
