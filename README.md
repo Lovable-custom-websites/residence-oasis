@@ -10,6 +10,7 @@ A modern, responsive website built with React, TypeScript, and Tailwind CSS.
 - **Routing**: React Router DOM
 - **Icons**: React Icons
 - **State Management**: React Context API
+- **Deployment**: GitHub Actions
 
 ## 🚀 Getting Started
 
@@ -86,79 +87,37 @@ This project uses environment variables for sensitive configuration. The followi
 
 **Important**: Never commit your `.env` file to version control. The `.env.example` file is provided as a template.
 
-**For Production**: When deploying to GitHub Pages, you'll need to set environment variables as GitHub Secrets (see deployment section below).
-
 ## 🌐 Deployment
 
-### GitHub Pages
+This project uses GitHub Actions for automated deployment. The deployment workflow is configured in `.github/workflows/` and automatically builds and deploys the application when changes are pushed to the main branch.
 
-**Important**: Since this project uses environment variables, you need to set them up in your deployment process.
+### GitHub Actions Setup
 
-#### Method 1: Manual Deployment (Recommended)
+The deployment process is handled automatically by GitHub Actions. When you push changes to the main branch:
 
-1. **Set up environment variables for production**
-   ```bash
-   # Create a production .env file with your Supabase credentials
-   cp .env.example .env.production
-   # Edit .env.production with your actual credentials
-   ```
+1. **Automatic Build**: The workflow automatically builds the project
+2. **Environment Variables**: Uses GitHub Secrets for production environment variables
+3. **Deployment**: Automatically deploys to the configured hosting platform
 
-2. **Build and deploy**
-   ```bash
-   npm run deploy
-   ```
+### Required GitHub Secrets
 
-3. **Configure GitHub Pages**
-   - Go to your repository settings
-   - Navigate to "Pages"
-   - Select "Deploy from a branch"
-   - Choose the `gh-pages` branch
-   - Set the source to `/ (root)`
+For the deployment to work correctly, you need to set up the following secrets in your GitHub repository:
 
-#### Method 2: GitHub Actions (Advanced)
-
-Create `.github/workflows/deploy.yml`:
-```yaml
-name: Deploy to GitHub Pages
-
-on:
-  push:
-    branches: [ main ]
-
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'
-        
-    - name: Install dependencies
-      run: npm install
-      
-    - name: Build
-      run: npm run build
-      env:
-        VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
-        VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
-        
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist
-```
+1. Go to your repository settings
+2. Navigate to "Secrets and variables" → "Actions"
+3. Add the following repository secrets:
+   - `VITE_SUPABASE_URL` - Your Supabase project URL
+   - `VITE_SUPABASE_ANON_KEY` - Your Supabase anonymous key
 
 ## 📱 Features
 
-- Multi-language support (French and English)
+- Multi-language support (French, English, and Arabic)
 - Responsive design for all devices
 - Interactive components with smooth animations
 - Touch-friendly mobile interactions
 - Modern UI with Tailwind CSS
+- Apartment booking and availability system
+- Image galleries and virtual tours
 
 ## 🎨 Customization
 
@@ -166,7 +125,10 @@ jobs:
 Edit `src/data/appData.ts` to modify the application data and content.
 
 ### Adding Translations
-Edit the locale files in `src/locales/` to add or modify translations.
+Edit the locale files in `src/locales/` to add or modify translations:
+- `src/locales/en.ts` - English translations
+- `src/locales/fr.ts` - French translations
+- `src/locales/ar.ts` - Arabic translations
 
 ### Styling
 The project uses Tailwind CSS for styling. Custom styles can be added in `src/index.css` or by modifying the Tailwind configuration in `tailwind.config.ts`.
