@@ -60,7 +60,7 @@ export default function Apartments() {
 
       <main className="flex-1 pt-20">
         {/* Header Section */}
-        <section className="relative py-8 bg-gradient-to-r from-sea-light to-white dark:from-sea-dark dark:to-background overflow-hidden">
+        <section className="relative py-10 bg-gradient-to-r from-sea-light to-white dark:from-sea-dark dark:to-background overflow-hidden">
           <div className="container relative z-10">
             <div className="max-w-3xl mx-auto text-center animate-fade-in">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
@@ -80,7 +80,7 @@ export default function Apartments() {
         </section>
 
         {/* Filter Section */}
-        <section className="py-8 border-b">
+        <section className="py-10 border-b">
           <div className="container">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 animate-fade-in">
               {/* Apartment Type Filter */}
@@ -179,7 +179,7 @@ export default function Apartments() {
         </section>
 
         {/* Apartments Grid */}
-        <section className="section">
+        <section className="section py-10">
           <div className="container">
             {filteredApartments.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

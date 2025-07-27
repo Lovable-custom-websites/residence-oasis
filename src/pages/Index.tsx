@@ -113,7 +113,7 @@ export default function Index() {
 
 
         {/* Featured Apartments */}
-        <section className="section">
+        <section className="section py-10">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-12 animate-fade-in">
               <span className="text-sm text-primary font-medium uppercase tracking-wider">
@@ -149,7 +149,7 @@ export default function Index() {
         <TestimonialsSection />
 
         {/* Features Section */}
-        <section className="section bg-card">
+        <section className="section bg-card py-10">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-12 animate-fade-in">
               <span className="text-sm text-primary font-medium uppercase tracking-wider">

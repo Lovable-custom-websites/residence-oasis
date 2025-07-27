@@ -21,7 +21,7 @@ export default function Contact() {
 
       <main className="flex-1 pt-20">
         {/* Header Section */}
-        <section className="relative py-8 bg-gradient-to-r from-sea-light to-white dark:from-sea-dark dark:to-background overflow-hidden">
+        <section className="relative py-10 bg-gradient-to-r from-sea-light to-white dark:from-sea-dark dark:to-background overflow-hidden">
           <div className="container relative z-10">
             <div className="max-w-3xl mx-auto text-center animate-fade-in">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
@@ -75,7 +75,7 @@ export default function Contact() {
         </section>
 
         {/* Contact Information & Map */}
-        <section className="section py-8">
+        <section className="section py-10">
           <div className="container">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {/* Contact Information */}
@@ -141,7 +141,7 @@ export default function Contact() {
         </section>
 
         {/* FAQ Section */}
-        <section className="section py-8 bg-muted">
+        <section className="section py-10 bg-muted">
           <div className="container">
             <div className="max-w-3xl mx-auto text-center mb-12 animate-fade-in">
               <h2 className="text-3xl font-bold mb-4">{t.contact.faq}</h2>
