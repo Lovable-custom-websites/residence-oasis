@@ -137,7 +137,7 @@ export const en = {
   },
   gallery: {
     title: "Photo Gallery",
-    subtitle: "Explore our seaside residence through captivating images.",
+    subtitle: "Explore our seaside residence through captivating images",
     filters: {
       all: "All",
       exterior: "Exterior",
@@ -153,8 +153,7 @@ export const en = {
   },
   contact: {
     title: "Contact Us",
-    subtitle: "We're here to make your stay unforgettable. Contact us for any questions or special requests.",
-    getInTouch: "Get In Touch",
+    subtitle: "We're here to make your stay unforgettable",
     address: "Address",
     phone: "Phone",
     email: "Email",

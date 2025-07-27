@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { FaWhatsapp, FaTelegram, FaPhone } from "react-icons/fa";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { contactInfo } from "@/data/appData";
 
@@ -20,7 +21,7 @@ export default function Contact() {
 
       <main className="flex-1 pt-20">
         {/* Header Section */}
-        <section className="relative py-20 bg-gradient-to-r from-sea-light to-white dark:from-sea-dark dark:to-background overflow-hidden">
+        <section className="relative py-8 bg-gradient-to-r from-sea-light to-white dark:from-sea-dark dark:to-background overflow-hidden">
           <div className="container relative z-10">
             <div className="max-w-3xl mx-auto text-center animate-fade-in">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
@@ -29,6 +30,40 @@ export default function Contact() {
               <p className="text-muted-foreground text-lg mb-6">
                 {t.contact.subtitle}
               </p>
+              {/* Contact Action Icons */}
+              <div className="flex justify-center gap-16 my-8">
+                {/* WhatsApp */}
+                <a
+                  href={contactInfo.social.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="WhatsApp"
+                  className="flex flex-col items-center group"
+                >
+                  <FaWhatsapp className="w-14 h-14 text-green-500 group-hover:scale-110 group-active:scale-95 transition-transform drop-shadow-lg" />
+                  <span className="mt-2 text-base font-medium text-green-700">WhatsApp</span>
+                </a>
+                {/* Telegram */}
+                <a
+                  href={contactInfo.social.telegram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Telegram"
+                  className="flex flex-col items-center group"
+                >
+                  <FaTelegram className="w-14 h-14 text-blue-500 group-hover:scale-110 group-active:scale-95 transition-transform drop-shadow-lg" />
+                  <span className="mt-2 text-base font-medium text-blue-700">Telegram</span>
+                </a>
+                {/* Phone */}
+                <a
+                  href={`tel:${contactInfo.phone.primary.replace(/[^+\d]/g, "")}`}
+                  aria-label="Phone"
+                  className="flex flex-col items-center group"
+                >
+                  <FaPhone className="w-14 h-14 text-primary group-hover:scale-110 group-active:scale-95 transition-transform drop-shadow-lg" />
+                  <span className="mt-2 text-base font-medium text-primary">Appeler</span>
+                </a>
+              </div>
             </div>
           </div>
 
@@ -40,14 +75,12 @@ export default function Contact() {
         </section>
 
         {/* Contact Information & Map */}
-        <section className="section">
+        <section className="section py-8">
           <div className="container">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {/* Contact Information */}
               <div className="animate-fade-in [animation-delay:100ms]">
-                <h2 className="text-2xl font-bold mb-6">{t.contact.getInTouch}</h2>
-
-                <div className="glass-card p-6 space-y-6">
+                <div className="glass-card p-6 space-y-6 h-[400px] flex flex-col justify-center">
                   <div className="flex items-start">
                     <div className="flex-shrink-0 h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
                       <MapPin className="h-5 w-5 text-primary" />
@@ -91,7 +124,6 @@ export default function Contact() {
 
               {/* Map */}
               <div className="animate-fade-in [animation-delay:300ms]">
-                <h2 className="text-2xl font-bold mb-6">Location</h2>
                 <div className="h-[400px] rounded-xl overflow-hidden">
                   <iframe
                     src={contactInfo.map.embedUrl}
@@ -109,7 +141,7 @@ export default function Contact() {
         </section>
 
         {/* FAQ Section */}
-        <section className="section bg-muted">
+        <section className="section py-8 bg-muted">
           <div className="container">
             <div className="max-w-3xl mx-auto text-center mb-12 animate-fade-in">
               <h2 className="text-3xl font-bold mb-4">{t.contact.faq}</h2>

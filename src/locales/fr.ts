@@ -137,7 +137,7 @@ export const fr = {
   },
   gallery: {
     title: "Galerie Photo",
-    subtitle: "Explorez notre résidence proche de la mer à travers des images captivantes.",
+    subtitle: "Explorez notre résidence proche de la mer à travers des images captivantes",
     filters: {
       all: "Tout",
       exterior: "Extérieur",
@@ -153,8 +153,7 @@ export const fr = {
   },
   contact: {
     title: "Nous Contacter",
-    subtitle: "Nous sommes là pour rendre votre séjour inoubliable. Contactez-nous pour toute question ou demande spéciale.",
-    getInTouch: "Entrer en Contact",
+    subtitle: "Nous sommes là pour rendre votre séjour inoubliable",
     address: "Adresse",
     phone: "Téléphone",
     email: "E-mail",
