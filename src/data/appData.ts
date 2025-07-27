@@ -19,7 +19,8 @@ export const allApartments: ApartmentProps[] = [
     ],
     location: "floor1",
     type: "Studio",
-    features: ["Wi-Fi", "Kitchen", "Bathroom", "Air Conditioning", "Refrigerator", "Oven", "Stove", "Freezer", "Washing Machine"]
+    features: ["Wi-Fi", "Kitchen", "Bathroom", "Air Conditioning", "Refrigerator", "Oven", "Stove", "Freezer", "Washing Machine"],
+    airbnbLink: "https://www.airbnb.fr/rooms/1210309363040804447"
   },
   {
     id: "2",
@@ -38,7 +39,8 @@ export const allApartments: ApartmentProps[] = [
     ],
     location: "floor1",
     type: "F2",
-    features: ["Wi-Fi", "Kitchen", "Bathroom", "Air Conditioning", "Refrigerator", "Oven", "Stove", "Freezer", "Washing Machine"]
+    features: ["Wi-Fi", "Kitchen", "Bathroom", "Air Conditioning", "Refrigerator", "Oven", "Stove", "Freezer", "Washing Machine"],
+    airbnbLink: "https://www.airbnb.fr/rooms/1403490902913383980"
   },
   {
     id: "3",
@@ -59,7 +61,8 @@ export const allApartments: ApartmentProps[] = [
     ],
     location: "floor1",
     type: "F2",
-    features: ["Wi-Fi", "Kitchen", "Bathroom", "Air Conditioning", "Refrigerator", "Oven", "Stove", "Freezer", "Washing Machine", "Jacuzzi"]
+    features: ["Wi-Fi", "Kitchen", "Bathroom", "Air Conditioning", "Refrigerator", "Oven", "Stove", "Freezer", "Washing Machine", "Jacuzzi"],
+    airbnbLink: "https://www.airbnb.fr/rooms/1406477130010047362"
   },
   {
     id: "4",
@@ -80,7 +83,8 @@ export const allApartments: ApartmentProps[] = [
     ],
     location: "floor2",
     type: "F2",
-    features: ["Wi-Fi", "Kitchen", "Bathroom", "Air Conditioning", "Refrigerator", "Oven", "Stove", "Freezer", "Washing Machine"]
+    features: ["Wi-Fi", "Kitchen", "Bathroom", "Air Conditioning", "Refrigerator", "Oven", "Stove", "Freezer", "Washing Machine"],
+    airbnbLink: "https://www.airbnb.fr/rooms/1466501144879461799"
   },
   {
     id: "5",
@@ -102,7 +106,8 @@ export const allApartments: ApartmentProps[] = [
     ],
     location: "floor2",
     type: "F2",
-    features: ["Wi-Fi", "Kitchen", "Bathroom", "Air Conditioning", "Refrigerator", "Oven", "Stove", "Freezer", "Washing Machine"]
+    features: ["Wi-Fi", "Kitchen", "Bathroom", "Air Conditioning", "Refrigerator", "Oven", "Stove", "Freezer", "Washing Machine"],
+    airbnbLink: "https://www.airbnb.fr/rooms/1459886902893228309"
   },
   {
     id: "6",
@@ -123,7 +128,8 @@ export const allApartments: ApartmentProps[] = [
     ],
     location: "floor2",
     type: "F2",
-    features: ["Wi-Fi", "Kitchen", "Bathroom", "Air Conditioning", "Refrigerator", "Oven", "Stove", "Freezer", "Washing Machine"]
+    features: ["Wi-Fi", "Kitchen", "Bathroom", "Air Conditioning", "Refrigerator", "Oven", "Stove", "Freezer", "Washing Machine"],
+    airbnbLink: "https://www.airbnb.fr/rooms/1456024577261385927"
   },
   {
     id: "7",
@@ -139,7 +145,8 @@ export const allApartments: ApartmentProps[] = [
     ],
     location: "floor3",
     type: "F3",
-    features: ["Wi-Fi", "Kitchen", "Bathroom", "Air Conditioning", "Refrigerator", "Oven", "Stove", "Freezer", "Washing Machine", "TV", "Microwave", "Terrace", "Dishwasher"]
+    features: ["Wi-Fi", "Kitchen", "Bathroom", "Air Conditioning", "Refrigerator", "Oven", "Stove", "Freezer", "Washing Machine", "TV", "Microwave", "Terrace", "Dishwasher"],
+    airbnbLink: "https://www.airbnb.fr/rooms/NONE"
   },
 ];
 

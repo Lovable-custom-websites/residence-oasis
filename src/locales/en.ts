@@ -134,6 +134,7 @@ export const en = {
     loadingCalendar: "Loading Calendar",
     loadingData: "Loading availabilities...",
     saving: "Saving...",
+    bookOnAirbnb: "Book on Airbnb",
   },
   gallery: {
     title: "Photo Gallery",
@@ -173,6 +174,9 @@ export const en = {
     thankYou: "Thank you for reaching out. We'll respond to your message as soon as possible.",
     faq: "Frequently Asked Questions",
     faqSubtitle: "Find quick answers to commonly asked questions about our accommodations and services.",
+    whatsapp: "WhatsApp",
+    telegram: "Telegram",
+    messagePrefix: "Salem alaykoum / Hello, I'm interested in the apartment",
     questions: {
       checkInOut: {
         question: "What are your check-in and check-out times?",

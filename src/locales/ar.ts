@@ -134,6 +134,7 @@ export const ar = {
     loadingCalendar: "تحميل التقويم",
     loadingData: "تحميل بيانات التوفر...",
     saving: "حفظ...",
+    bookOnAirbnb: "احجز على Airbnb",
   },
   gallery: {
     title: "معرض الصور",
@@ -173,6 +174,9 @@ export const ar = {
     thankYou: "شكرًا لتواصلك معنا. سنرد على رسالتك في أقرب وقت ممكن.",
     faq: "الأسئلة الشائعة",
     faqSubtitle: "اعثر على إجابات سريعة للأسئلة الشائعة حول إقاماتنا وخدماتنا.",
+    whatsapp: "واتساب",
+    telegram: "تلغرام",
+    messagePrefix: "السلام عليكم / مرحباً، أنا مهتم بالشقة",
     questions: {
       checkInOut: {
         question: "ما هي أوقات تسجيل الوصول والمغادرة؟",

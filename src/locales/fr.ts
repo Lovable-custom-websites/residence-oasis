@@ -134,6 +134,7 @@ export const fr = {
     loadingCalendar: "Chargement du calendrier",
     loadingData: "Chargement des disponibilité...",
     saving: "Enregistrement...",
+    bookOnAirbnb: "Réserver sur Airbnb",
   },
   gallery: {
     title: "Galerie Photo",
@@ -173,6 +174,9 @@ export const fr = {
     thankYou: "Merci de nous avoir contactés. Nous répondrons à votre message dès que possible.",
     faq: "Questions Fréquemment Posées",
     faqSubtitle: "Trouvez des réponses rapides aux questions couramment posées sur nos hébergements et services.",
+    whatsapp: "WhatsApp",
+    telegram: "Telegram",
+    messagePrefix: "Salem alaykoum / Bonjour, je suis intéressé par l'appartement",
     questions: {
       checkInOut: {
         question: "Quelles sont vos heures d'arrivée et de départ ?",
