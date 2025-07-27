@@ -143,7 +143,8 @@ export const ar = {
       all: "الكل",
       exterior: "الخارج",
       apartments: "الشقق",
-      proximity: "بالقرب"
+      proximity: "بالقرب",
+      allApartments: "جميع الشقق"
     }
   },
   booking: {

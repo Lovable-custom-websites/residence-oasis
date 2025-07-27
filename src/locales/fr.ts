@@ -144,6 +144,7 @@ export const fr = {
       exterior: "Extérieur",
       apartments: "Appartements",
       proximity: "À proximité",
+      allApartments: "Tous les Appartements",
     }
   },
   booking: {

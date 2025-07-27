@@ -5,13 +5,14 @@ import Footer from "@/components/Footer";
 import { X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { galleryImages } from "@/data/appData";
+import { galleryImages, allApartments } from "@/data/appData";
 
 export default function Gallery() {
   const { t } = useLanguage();
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
   const [filteredImages, setFilteredImages] = useState(galleryImages);
   const [activeFilter, setActiveFilter] = useState("all");
+  const [activeApartmentFilter, setActiveApartmentFilter] = useState<string | null>(null);
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
   const lightboxRef = useRef<HTMLDivElement>(null);
@@ -27,11 +28,23 @@ export default function Gallery() {
   // Filter gallery images by category
   const filterGallery = (category: string) => {
     setActiveFilter(category);
+    setActiveApartmentFilter(null); // Reset apartment filter when changing main category
 
     if (category === "all") {
       setFilteredImages(galleryImages);
     } else {
       setFilteredImages(galleryImages.filter(img => img.category === category));
+    }
+  };
+
+  // Filter gallery images by apartment
+  const filterByApartment = (apartmentId: string) => {
+    setActiveApartmentFilter(apartmentId);
+    
+    if (apartmentId === "all") {
+      setFilteredImages(galleryImages.filter(img => img.category === "apartments"));
+    } else {
+      setFilteredImages(galleryImages.filter(img => img.category === "apartments" && img.apartment === apartmentId));
     }
   };
 
@@ -128,10 +141,10 @@ export default function Gallery() {
                   key={category}
                   onClick={() => filterGallery(category)}
                   className={cn(
-                    "px-6 py-2 rounded-full transition-all",
+                    "px-6 py-2 rounded-full transition-all border",
                     activeFilter === category
-                      ? "bg-primary text-white shadow-lg"
-                      : "bg-card hover:bg-muted"
+                      ? "bg-primary text-primary-foreground shadow-lg border-primary"
+                      : "bg-muted/50 hover:bg-muted text-muted-foreground border-border"
                   )}
                 >
                   {category === "all"
@@ -144,6 +157,37 @@ export default function Gallery() {
                 </button>
               ))}
             </div>
+
+            {/* Apartment Subfilters - Only show when apartments category is active */}
+            {activeFilter === "apartments" && (
+              <div className="flex flex-wrap justify-center gap-2 mb-8 animate-fade-in">
+                <button
+                  onClick={() => filterByApartment("all")}
+                  className={cn(
+                    "px-4 py-2 rounded-full transition-all text-sm border",
+                    activeApartmentFilter === null || activeApartmentFilter === "all"
+                      ? "bg-primary text-primary-foreground shadow-lg border-primary"
+                      : "bg-muted/50 hover:bg-muted text-muted-foreground border-border"
+                  )}
+                >
+                  {t.gallery.filters.allApartments || "All Apartments"}
+                </button>
+                {allApartments.map((apartment) => (
+                  <button
+                    key={apartment.id}
+                    onClick={() => filterByApartment(apartment.id)}
+                    className={cn(
+                      "px-4 py-2 rounded-full transition-all text-sm border",
+                      activeApartmentFilter === apartment.id
+                        ? "bg-primary text-primary-foreground shadow-lg border-primary"
+                        : "bg-muted/50 hover:bg-muted text-muted-foreground border-border"
+                    )}
+                  >
+                    {apartment.type} (N°{apartment.id})
+                  </button>
+                ))}
+              </div>
+            )}
 
             {/* Gallery Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
