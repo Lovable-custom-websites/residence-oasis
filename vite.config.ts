@@ -63,6 +63,21 @@ export default defineConfig(({ mode }) => ({
           'icons-vendor': ['react-icons', 'lucide-react'],
           'supabase-vendor': ['@supabase/supabase-js'],
           'utils-vendor': ['sonner', 'next-themes']
+        },
+        // Add content hash to filenames for better caching
+        chunkFileNames: 'assets/[name]-[hash].js',
+        entryFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: (assetInfo) => {
+          if (!assetInfo.name) return 'assets/[name]-[hash].[ext]';
+          const info = assetInfo.name.split('.');
+          const ext = info[info.length - 1];
+          if (/\.(css)$/.test(assetInfo.name)) {
+            return `assets/[name]-[hash].${ext}`;
+          }
+          if (/\.(png|jpe?g|svg|gif|tiff|bmp|ico|avif|webp)$/i.test(assetInfo.name)) {
+            return `assets/[name]-[hash].${ext}`;
+          }
+          return `assets/[name]-[hash].${ext}`;
         }
       }
     },

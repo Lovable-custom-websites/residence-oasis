@@ -31,6 +31,11 @@ jobs:
         VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
         VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
 
+    - name: Copy cache headers
+      run: |
+        cp public/_headers dist/
+        cp public/_redirects dist/
+
     - name: Setup Pages
       uses: actions/configure-pages@v4
 

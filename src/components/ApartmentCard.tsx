@@ -70,6 +70,7 @@ export default function ApartmentCard({ apartment }: { apartment: ApartmentProps
         <img
           src={apartment.image}
           alt={translatedName}
+          loading="lazy"
           className={cn(
             "w-full h-full object-cover transition-transform duration-700",
             isHovered ? "scale-110" : "scale-100"
