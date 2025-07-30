@@ -137,16 +137,23 @@ export const allApartments: ApartmentProps[] = [
     description: "apartment7_description",
     priceeur: 120,
     pricedz: 25000,
-    capacity: 6,
+    capacity: 8,
     size: 132,
-    image: "/residence/assets/WIP/01.webp",
+    image: "/residence/assets/7-F3/01.avif",
     images: [
-      "/residence/assets/WIP/01.webp"
+      "/residence/assets/7-F3/01.avif",
+      "/residence/assets/7-F3/02.avif",
+      "/residence/assets/7-F3/03.avif",
+      "/residence/assets/7-F3/04.avif",
+      "/residence/assets/7-F3/05.avif",
+      "/residence/assets/7-F3/06.avif",
+      "/residence/assets/7-F3/07.avif",
+      "/residence/assets/7-F3/08.avif"
     ],
     location: "floor3",
     type: "F3",
     features: ["Wi-Fi", "Kitchen", "Bathroom", "Air Conditioning", "Refrigerator", "Oven", "Stove", "Freezer", "Washing Machine", "TV", "Microwave", "Terrace", "Dishwasher"],
-    airbnbLink: "https://www.airbnb.fr/rooms/NONE"
+    airbnbLink: "https://www.airbnb.fr/rooms/1476767652269208861"
   },
 ];
 
@@ -197,6 +204,16 @@ export const galleryImages = [
   { id: 64, src: '/residence/assets/6-F2/04.avif', alt: 'F2 Deluxe Double - Bathroom', category: 'apartments', apartment: '6' },
   { id: 65, src: '/residence/assets/6-F2/05.avif', alt: 'F2 Deluxe Double - Additional View 1', category: 'apartments', apartment: '6' },
   { id: 66, src: '/residence/assets/6-F2/06.avif', alt: 'F2 Deluxe Double - Additional View 2', category: 'apartments', apartment: '6' },
+
+  // F3 Deluxe Suite Private Terrace (Apartment 7)
+  { id: 71, src: '/residence/assets/7-F3/01.avif', alt: '', category: 'apartments', apartment: '7' },
+  { id: 72, src: '/residence/assets/7-F3/02.avif', alt: '', category: 'apartments', apartment: '7' },
+  { id: 73, src: '/residence/assets/7-F3/03.avif', alt: '', category: 'apartments', apartment: '7' },
+  { id: 74, src: '/residence/assets/7-F3/04.avif', alt: '', category: 'apartments', apartment: '7' },
+  { id: 75, src: '/residence/assets/7-F3/05.avif', alt: '', category: 'apartments', apartment: '7' },
+  { id: 76, src: '/residence/assets/7-F3/06.avif', alt: '', category: 'apartments', apartment: '7' },
+  { id: 77, src: '/residence/assets/7-F3/07.avif', alt: '', category: 'apartments', apartment: '7' },
+  { id: 78, src: '/residence/assets/7-F3/08.avif', alt: '', category: 'apartments', apartment: '7' },
 
   // Common images
   { id: 91, src: '/residence/assets/COMMON/01.avif', alt: 'Rusica Park', category: 'proximity' },
