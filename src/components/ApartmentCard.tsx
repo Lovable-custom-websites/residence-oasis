@@ -30,6 +30,7 @@ export interface ApartmentProps {
   type: string;
   features: string[];
   airbnbLink?: string;
+  contactPhone?: string;
 }
 
 
@@ -145,9 +146,9 @@ export default function ApartmentCard({ apartment }: { apartment: ApartmentProps
             {t.apartments.availability || 'Availability'}
           </Button>
         </div>
-        
+
         <hr className="my-4" />
-        
+
         <div className="flex justify-center gap-3">
           <Button
             className="bg-[#FF5A5F] hover:bg-[#E31C5F] text-white p-3 rounded-lg transition-colors duration-200"
@@ -160,23 +161,23 @@ export default function ApartmentCard({ apartment }: { apartment: ApartmentProps
           </Button>
           <Button
             className="bg-green-500 hover:bg-green-600 text-white p-3 rounded-lg transition-colors duration-200"
-            onClick={() => window.open('https://wa.me/213561472990?text=' + encodeURIComponent((t.contact.messagePrefix || 'Hello, I\'m interested in') + ' "' + t.apartmentNames[`apartment${apartment.id}_name` as keyof typeof t.apartmentNames] + '" [N°' + apartment.id + ']'), '_blank')}
+            onClick={() => window.open('https://wa.me/' + (apartment.contactPhone || '213561472990') + '?text=' + encodeURIComponent((t.contact.messagePrefix || 'Hello, I\'m interested in') + ' "' + t.apartmentNames[`apartment${apartment.id}_name` as keyof typeof t.apartmentNames] + '" [N°' + apartment.id + ']'), '_blank')}
             title="WhatsApp"
           >
             <FaWhatsapp className="w-5 h-5" />
           </Button>
-          
+
           <Button
             className="bg-blue-500 hover:bg-blue-600 text-white p-3 rounded-lg transition-colors duration-200"
-            onClick={() => window.open('https://t.me/+213561472990?text=' + encodeURIComponent((t.contact.messagePrefix || 'Hello, I\'m interested in') + ' "' + t.apartmentNames[`apartment${apartment.id}_name` as keyof typeof t.apartmentNames] + '" [N°' + apartment.id + ']'), '_blank')}
+            onClick={() => window.open('https://t.me/residence_oasis' + '?text=' + encodeURIComponent((t.contact.messagePrefix || 'Hello, I\'m interested in') + ' "' + t.apartmentNames[`apartment${apartment.id}_name` as keyof typeof t.apartmentNames] + '" [N°' + apartment.id + ']'), '_blank')}
             title="Telegram"
           >
             <FaTelegram className="w-5 h-5" />
           </Button>
-          
+
           <Button
             className="bg-primary hover:bg-primary/90 text-white p-3 rounded-lg transition-colors duration-200"
-            onClick={() => window.open('tel:+213561472990', '_blank')}
+            onClick={() => window.open('tel:+' + (apartment.contactPhone || '213561472990'), '_blank')}
             title="Appeler"
           >
             <FaPhone className="w-5 h-5" />

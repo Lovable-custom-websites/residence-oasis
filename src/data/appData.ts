@@ -20,7 +20,8 @@ export const allApartments: ApartmentProps[] = [
     location: "floor1",
     type: "Studio",
     features: ["Wi-Fi", "Kitchen", "Bathroom", "Air Conditioning", "Refrigerator", "Oven", "Stove", "Freezer", "Washing Machine"],
-    airbnbLink: "https://www.airbnb.fr/rooms/1210309363040804447"
+    airbnbLink: "https://www.airbnb.fr/rooms/1210309363040804447",
+    contactPhone: "213696123800"
   },
   {
     id: "2",
@@ -40,7 +41,8 @@ export const allApartments: ApartmentProps[] = [
     location: "floor1",
     type: "F2",
     features: ["Wi-Fi", "Kitchen", "Bathroom", "Air Conditioning", "Refrigerator", "Oven", "Stove", "Freezer", "Washing Machine"],
-    airbnbLink: "https://www.airbnb.fr/rooms/1403490902913383980"
+    airbnbLink: "https://www.airbnb.fr/rooms/1403490902913383980",
+    contactPhone: "213696123800"
   },
   {
     id: "3",
@@ -62,7 +64,8 @@ export const allApartments: ApartmentProps[] = [
     location: "floor1",
     type: "F2",
     features: ["Wi-Fi", "Kitchen", "Bathroom", "Air Conditioning", "Refrigerator", "Oven", "Stove", "Freezer", "Washing Machine", "Jacuzzi"],
-    airbnbLink: "https://www.airbnb.fr/rooms/1406477130010047362"
+    airbnbLink: "https://www.airbnb.fr/rooms/1406477130010047362",
+    contactPhone: "213696123800"
   },
   {
     id: "4",
@@ -84,7 +87,8 @@ export const allApartments: ApartmentProps[] = [
     location: "floor2",
     type: "F2",
     features: ["Wi-Fi", "Kitchen", "Bathroom", "Air Conditioning", "Refrigerator", "Oven", "Stove", "Freezer", "Washing Machine"],
-    airbnbLink: "https://www.airbnb.fr/rooms/1466501144879461799"
+    airbnbLink: "https://www.airbnb.fr/rooms/1466501144879461799",
+    contactPhone: "213561472990"
   },
   {
     id: "5",
@@ -107,7 +111,8 @@ export const allApartments: ApartmentProps[] = [
     location: "floor2",
     type: "F2",
     features: ["Wi-Fi", "Kitchen", "Bathroom", "Air Conditioning", "Refrigerator", "Oven", "Stove", "Freezer", "Washing Machine"],
-    airbnbLink: "https://www.airbnb.fr/rooms/1459886902893228309"
+    airbnbLink: "https://www.airbnb.fr/rooms/1459886902893228309",
+    contactPhone: "213561472990"
   },
   {
     id: "6",
@@ -129,7 +134,8 @@ export const allApartments: ApartmentProps[] = [
     location: "floor2",
     type: "F2",
     features: ["Wi-Fi", "Kitchen", "Bathroom", "Air Conditioning", "Refrigerator", "Oven", "Stove", "Freezer", "Washing Machine"],
-    airbnbLink: "https://www.airbnb.fr/rooms/1456024577261385927"
+    airbnbLink: "https://www.airbnb.fr/rooms/1456024577261385927",
+    contactPhone: "213561472990"
   },
   {
     id: "7",
@@ -153,7 +159,8 @@ export const allApartments: ApartmentProps[] = [
     location: "floor3",
     type: "F3",
     features: ["Wi-Fi", "Kitchen", "Bathroom", "Air Conditioning", "Refrigerator", "Oven", "Stove", "Freezer", "Washing Machine", "TV", "Microwave", "Terrace", "Dishwasher"],
-    airbnbLink: "https://www.airbnb.fr/rooms/1476767652269208861"
+    airbnbLink: "https://www.airbnb.fr/rooms/1476767652269208861",
+    contactPhone: "213561472990"
   },
 ];
 
