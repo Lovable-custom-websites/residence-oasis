@@ -121,6 +121,8 @@ export const fr = {
       of: "de",
       accommodations: "hébergements",
       resetFilters: "Réinitialiser les Filtres",
+      showFilters: "Afficher les Filtres",
+      hideFilters: "Masquer les Filtres",
       noMatch: "Aucun appartement ne correspond à vos filtres",
       adjustFilters: "Essayez d'ajuster vos critères de filtre pour voir plus d'options.",
       viewDetails: "Détails",

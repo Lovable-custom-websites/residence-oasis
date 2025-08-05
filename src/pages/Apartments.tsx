@@ -14,6 +14,7 @@ import {
 import { Slider } from "@/components/ui/slider";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { allApartments } from "@/data/appData";
+import { ChevronDown, ChevronUp, Filter } from "lucide-react";
 
 export default function Apartments() {
   const { t } = useLanguage();
@@ -22,6 +23,7 @@ export default function Apartments() {
   const [locationFilter, setLocationFilter] = useState<string>("all");
   const [priceMax, setPriceMax] = useState<number>(150);
   const [priceDzdMax, setPriceDzdMax] = useState<number>(25000);
+  const [showFilters, setShowFilters] = useState<boolean>(false);
 
   useEffect(() => {
     // Scroll to top when component mounts
@@ -79,102 +81,128 @@ export default function Apartments() {
           </div>
         </section>
 
-        {/* Filter Section */}
-        <section className="py-10 border-b">
+        {/* Filter Toggle Section */}
+        <section className="py-6 border-b">
           <div className="container">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 animate-fade-in">
-              {/* Apartment Type Filter */}
-              <div>
-                <label className="block text-sm font-medium mb-2">
-                  {t.labels.type}
-                </label>
-                <Select value={typeFilter} onValueChange={setTypeFilter}>
-                  <SelectTrigger className="w-full">
-                    <SelectValue placeholder={t.labels.type} />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="all">{t.apartments.filters.allTypes}</SelectItem>
-                    <SelectItem value="Studio">{t.apartmentTypes.Studio}</SelectItem>
-                    <SelectItem value="F2">{t.apartmentTypes.F2}</SelectItem>
-                    <SelectItem value="F3">{t.apartmentTypes.F3}</SelectItem>
-                  </SelectContent>
-                </Select>
+            <div className="flex justify-between items-center">
+              <div className="flex items-center gap-2">
+                <Filter className="w-5 h-5" />
+                <span className="font-medium">{t.apartments.filters.showing} {filteredApartments.length} {t.apartments.filters.of} {allApartments.length} {t.apartments.filters.accommodations}</span>
               </div>
-
-              {/* Location Filter */}
-              <div>
-                <label className="block text-sm font-medium mb-2">
-                  {t.apartments.filters.location}
-                </label>
-                <Select value={locationFilter} onValueChange={setLocationFilter}>
-                  <SelectTrigger className="w-full">
-                    <SelectValue placeholder={t.apartments.filters.location} />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="all">{t.apartments.filters.allLocations}</SelectItem>
-                    {locations.filter(loc => loc !== "all").map(location => (
-                      <SelectItem key={location} value={location}>
-                        {t.locations[location] || location}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-
-              {/* Price Range Filters */}
-              <div className="space-y-4">
-                {/* Euro Price Range Filter */}
-                <div>
-                  <label className="block text-sm font-medium mb-2">
-                    {t.apartments.filters.priceRange}: ≤ €{priceMax}
-                  </label>
-                  <Slider
-                    defaultValue={[150]}
-                    min={30}
-                    max={150}
-                    step={5}
-                    value={[priceMax]}
-                    onValueChange={([val]) => setPriceMax(val)}
-                    className="my-4 rtl"
-                    style={{ direction: 'rtl' }}
-                  />
-                </div>
-
-                {/* DZD Price Range Filter */}
-                <div>
-                  <label className="block text-sm font-medium mb-2">
-                    {t.apartments.filters.priceRange}: ≤ DZD{priceDzdMax.toLocaleString()}
-                  </label>
-                  <Slider
-                    defaultValue={[25000]}
-                    min={8000}
-                    max={25000}
-                    step={500}
-                    value={[priceDzdMax]}
-                    onValueChange={([val]) => setPriceDzdMax(val)}
-                    className="my-4 rtl"
-                    style={{ direction: 'rtl' }}
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div className="flex justify-between items-center mt-6 animate-fade-in [animation-delay:200ms]">
-              <p className="text-muted-foreground">
-                {t.apartments.filters.showing} {filteredApartments.length} {t.apartments.filters.of} {allApartments.length} {t.apartments.filters.accommodations}
-              </p>
               <Button
                 variant="outline"
-                onClick={() => {
-                  setTypeFilter("all");
-                  setLocationFilter("all");
-                  setPriceMax(150);
-                  setPriceDzdMax(25000);
-                }}
+                onClick={() => setShowFilters(!showFilters)}
+                className="flex items-center gap-2"
               >
-                {t.apartments.filters.resetFilters}
+                {showFilters ? (
+                  <>
+                    <ChevronUp className="w-4 h-4" />
+                    {t.apartments.filters.hideFilters}
+                  </>
+                ) : (
+                  <>
+                    <ChevronDown className="w-4 h-4" />
+                    {t.apartments.filters.showFilters}
+                  </>
+                )}
               </Button>
             </div>
+
+            {/* Collapsible Filter Section */}
+            {showFilters && (
+              <div className="mt-6 animate-fade-in">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {/* Apartment Type Filter */}
+                  <div>
+                    <label className="block text-sm font-medium mb-2">
+                      {t.labels.type}
+                    </label>
+                    <Select value={typeFilter} onValueChange={setTypeFilter}>
+                      <SelectTrigger className="w-full">
+                        <SelectValue placeholder={t.labels.type} />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="all">{t.apartments.filters.allTypes}</SelectItem>
+                        <SelectItem value="Studio">{t.apartmentTypes.Studio}</SelectItem>
+                        <SelectItem value="F2">{t.apartmentTypes.F2}</SelectItem>
+                        <SelectItem value="F3">{t.apartmentTypes.F3}</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  {/* Location Filter */}
+                  <div>
+                    <label className="block text-sm font-medium mb-2">
+                      {t.apartments.filters.location}
+                    </label>
+                    <Select value={locationFilter} onValueChange={setLocationFilter}>
+                      <SelectTrigger className="w-full">
+                        <SelectValue placeholder={t.apartments.filters.location} />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="all">{t.apartments.filters.allLocations}</SelectItem>
+                        {locations.filter(loc => loc !== "all").map(location => (
+                          <SelectItem key={location} value={location}>
+                            {t.locations[location] || location}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  {/* Price Range Filters */}
+                  <div className="space-y-4">
+                    {/* Euro Price Range Filter */}
+                    <div>
+                      <label className="block text-sm font-medium mb-2">
+                        {t.apartments.filters.priceRange}: ≤ €{priceMax}
+                      </label>
+                      <Slider
+                        defaultValue={[150]}
+                        min={30}
+                        max={150}
+                        step={5}
+                        value={[priceMax]}
+                        onValueChange={([val]) => setPriceMax(val)}
+                        className="my-4 rtl"
+                        style={{ direction: 'rtl' }}
+                      />
+                    </div>
+
+                    {/* DZD Price Range Filter */}
+                    <div>
+                      <label className="block text-sm font-medium mb-2">
+                        {t.apartments.filters.priceRange}: ≤ DZD{priceDzdMax.toLocaleString()}
+                      </label>
+                      <Slider
+                        defaultValue={[25000]}
+                        min={8000}
+                        max={25000}
+                        step={500}
+                        value={[priceDzdMax]}
+                        onValueChange={([val]) => setPriceDzdMax(val)}
+                        className="my-4 rtl"
+                        style={{ direction: 'rtl' }}
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex justify-end mt-6">
+                  <Button
+                    variant="outline"
+                    onClick={() => {
+                      setTypeFilter("all");
+                      setLocationFilter("all");
+                      setPriceMax(150);
+                      setPriceDzdMax(25000);
+                    }}
+                  >
+                    {t.apartments.filters.resetFilters}
+                  </Button>
+                </div>
+              </div>
+            )}
           </div>
         </section>
 

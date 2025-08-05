@@ -121,6 +121,8 @@ export const en = {
       of: "of",
       accommodations: "accommodations",
       resetFilters: "Reset Filters",
+      showFilters: "Show Filters",
+      hideFilters: "Hide Filters",
       noMatch: "No apartments match your filters",
       adjustFilters: "Try adjusting your filter criteria to see more options.",
       viewDetails: "Details",

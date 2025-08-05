@@ -121,6 +121,8 @@ export const ar = {
       of: "من",
       accommodations: "إقامات",
       resetFilters: "إعادة تعيين الفلاتر",
+      showFilters: "إظهار الفلاتر",
+      hideFilters: "إخفاء الفلاتر",
       noMatch: "لا توجد شقق تطابق الفلاتر",
       adjustFilters: "حاول تعديل معايير الفلترة لرؤية المزيد من الخيارات.",
       viewDetails: "تفاصيل",
