@@ -84,7 +84,7 @@ export const en = {
         },
         wifi: {
           title: "Very High-Speed Wi-Fi",
-          description: "Stay connected with free high-speed internet (120 Mbps). Whether for remote work, streaming or video calls."
+          description: "Stay connected with free high-speed internet (240 Mbps). Whether for remote work, streaming or video calls."
         },
         kitchen: {
           title: "Fully Equipped Kitchen",

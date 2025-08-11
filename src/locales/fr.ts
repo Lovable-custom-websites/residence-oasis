@@ -84,7 +84,7 @@ export const fr = {
         },
         wifi: {
           title: "Wi-Fi Très Haut Débit",
-          description: "Restez connecté avec internet haut débit gratuit (120 Mbps). Que ce soit pour le télétravail, le streaming ou les appels vidéo."
+          description: "Restez connecté avec internet haut débit gratuit (240 Mbps). Que ce soit pour le télétravail, le streaming ou les appels vidéo."
         },
         kitchen: {
           title: "Cuisine entièrement équipée",

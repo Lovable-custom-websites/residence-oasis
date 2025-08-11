@@ -141,7 +141,7 @@ export const allApartments: ApartmentProps[] = [
     id: "7",
     name: "apartment7_name",
     description: "apartment7_description",
-    priceeur: 120,
+    priceeur: 100,
     pricedz: 25000,
     capacity: 8,
     size: 132,
