@@ -12,6 +12,7 @@ interface CalendarAvailabilityProps {
   label: string;
   availableLabel: string;
   unavailableLabel: string;
+  apartmentName?: string;
 }
 
 const CALENDAR_MODIFICATION = 'c7ad44cbad762a5da0a452f9e854fdc1e0e7a52a38015f23f3eab1d80b931dd472634dfac71cd34ebc35d16ab7fb8a90c81f975113d6c7538dc69dd8de9077ec';
@@ -31,7 +32,7 @@ function getSecretFromUrl() {
 
 
 
-export default function CalendarAvailability({ apartmentId, label, availableLabel, unavailableLabel }: CalendarAvailabilityProps) {
+export default function CalendarAvailability({ apartmentId, label, availableLabel, unavailableLabel, apartmentName }: CalendarAvailabilityProps) {
   const { t, language } = useLanguage();
   const [unavailableDates, setUnavailableDates] = useState<Date[]>([]);
   const [saving, setSaving] = useState(false);
@@ -239,6 +240,14 @@ export default function CalendarAvailability({ apartmentId, label, availableLabe
 
   return (
     <div className="flex flex-col items-center">
+      {/* Apartment Label */}
+      {apartmentName && (
+        <div className="text-center mb-4">
+                      <span className="bg-secondary text-secondary-foreground font-semibold text-base px-4 py-2 rounded-full shadow-sm border border-secondary/20">
+            {apartmentName}
+          </span>
+        </div>
+      )}
       <Calendar
         onClickDay={onCalendarDayClick}
         selectRange={false}

@@ -173,6 +173,7 @@ export default function ApartmentDetailsDialog({
             label={t.apartments.availability || 'Availability'}
             availableLabel={t.apartments.available || 'Available'}
             unavailableLabel={t.apartments.unavailable || 'Unavailable'}
+            apartmentName={t.apartmentNumber[apartment.id as keyof typeof t.apartmentNumber] || `${t.apartmentNumber.appartement} ${t.apartmentNumber.numero} ${apartment.id}`}
           />
         </DialogContent>
       </Dialog>
