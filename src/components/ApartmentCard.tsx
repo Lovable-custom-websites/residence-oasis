@@ -6,7 +6,9 @@ import {
   FaMapMarkerAlt,
   FaWhatsapp,
   FaTelegram,
-  FaPhone
+  FaPhone,
+  FaImages,
+  FaCalendarAlt
 } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -73,11 +75,15 @@ export default function ApartmentCard({ apartment }: { apartment: ApartmentProps
           alt={translatedName}
           loading="lazy"
           className={cn(
-            "w-full h-full object-cover transition-transform duration-700",
+            "w-full h-full object-cover transition-transform duration-700 cursor-pointer",
             isHovered ? "scale-110" : "scale-100"
           )}
+          onClick={() => setIsDialogOpen(true)}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60 flex items-end p-6">
+        <div 
+          className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60 flex items-end p-6 cursor-pointer"
+          onClick={() => setIsDialogOpen(true)}
+        >
           <div>
             <h3 className="text-white text-xl font-bold mb-1">{translatedName}</h3>
             <div className="flex items-center text-white/80 text-sm mb-2">
@@ -137,12 +143,14 @@ export default function ApartmentCard({ apartment }: { apartment: ApartmentProps
             className="btn-primary"
             onClick={() => setIsDialogOpen(true)}
           >
+            <FaImages className="h-4 w-4 mr-2" />
             {t.apartments.filters.viewDetails}
           </Button>
           <Button
             className="btn-primary bg-green-600 hover:bg-green-700 text-white"
             onClick={handleCalendarClick}
           >
+            <FaCalendarAlt className="h-4 w-4 mr-2" />
             {t.apartments.availability || 'Availability'}
           </Button>
         </div>
