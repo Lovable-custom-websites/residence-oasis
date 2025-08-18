@@ -241,20 +241,20 @@ export default function ApartmentCard({ apartment }: { apartment: ApartmentProps
           )}
         </div>
         <hr className="my-4" />
-        <div className="flex justify-center gap-4">
+        <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
           <Button
-            className="btn-primary"
+            className="btn-primary w-full sm:w-auto"
             onClick={() => setIsDialogOpen(true)}
           >
-            <FaImages className="h-4 w-4 mr-2" />
-            {t.apartments.filters.viewDetails}
+            <FaImages className="h-4 w-4 mr-2 flex-shrink-0" />
+            <span className="whitespace-nowrap">{t.apartments.filters.viewDetails}</span>
           </Button>
           <Button
-            className="btn-primary bg-green-600 hover:bg-green-700 text-white"
+            className="btn-primary bg-green-600 hover:bg-green-700 text-white w-full sm:w-auto"
             onClick={handleCalendarClick}
           >
-            <FaCalendarAlt className="h-4 w-4 mr-2" />
-            {t.apartments.availability || 'Availability'}
+            <FaCalendarAlt className="h-4 w-4 mr-2 flex-shrink-0" />
+            <span className="whitespace-nowrap">{t.apartments.availability || 'Availability'}</span>
           </Button>
         </div>
 
