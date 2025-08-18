@@ -62,7 +62,7 @@ export const allApartments: ApartmentProps[] = [
       "/residence/assets/3-F2/06.avif"
     ],
     location: "floor1",
-    type: "F2",
+    type: "F2-jacuzzi",
     features: ["Wi-Fi", "Kitchen", "Bathroom", "Air Conditioning", "Refrigerator", "Oven", "Stove", "Freezer", "Washing Machine", "Jacuzzi"],
     airbnbLink: "https://www.airbnb.fr/rooms/1406477130010047362",
     contactPhone: "213696123800"

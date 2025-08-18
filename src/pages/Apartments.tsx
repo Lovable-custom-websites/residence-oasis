@@ -36,7 +36,7 @@ export default function Apartments() {
 
     // Filter by apartment type
     if (typeFilter !== "all") {
-      result = result.filter(apt => apt.type === typeFilter);
+      result = result.filter(apt => apt.type.includes(typeFilter));
     }
 
     // Filter by location

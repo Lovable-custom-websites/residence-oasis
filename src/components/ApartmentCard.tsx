@@ -8,7 +8,9 @@ import {
   FaTelegram,
   FaPhone,
   FaImages,
-  FaCalendarAlt
+  FaCalendarAlt,
+  FaChevronDown,
+  FaChevronUp
 } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -43,6 +45,7 @@ export default function ApartmentCard({ apartment }: { apartment: ApartmentProps
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [calendarOpen, setCalendarOpen] = useState(false);
   const [calendarLoading, setCalendarLoading] = useState(false);
+  const [showSeasonalPricing, setShowSeasonalPricing] = useState(false);
   // Use translated name and description if available
   const translatedName = t.apartmentNames[apartment.name] || apartment.name;
 
@@ -80,7 +83,7 @@ export default function ApartmentCard({ apartment }: { apartment: ApartmentProps
           )}
           onClick={() => setIsDialogOpen(true)}
         />
-        <div 
+        <div
           className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60 flex items-end p-6 cursor-pointer"
           onClick={() => setIsDialogOpen(true)}
         >
@@ -136,6 +139,106 @@ export default function ApartmentCard({ apartment }: { apartment: ApartmentProps
           <span className="text-muted-foreground text-sm font-medium mx-6">{t.apartments.or || 'ou'}</span>
           <span className="text-xl font-bold">DZD{apartment.pricedz}</span>
           <span className="text-muted-foreground text-sm ml-1">/ {t.booking.summary.night}</span>
+        </div>
+
+        {/* Seasonal Pricing Dropdown */}
+        <div className="mt-4">
+          <Button
+            variant="outline"
+            onClick={() => setShowSeasonalPricing(!showSeasonalPricing)}
+            className="w-full flex items-center justify-between bg-gradient-to-r from-blue-50 to-teal-50 border border-blue-100 hover:from-blue-100 hover:to-teal-100"
+          >
+            <span className="seasonal-pricing-title">
+              {t.apartments.seasonalPricing}
+            </span>
+            {showSeasonalPricing ? (
+              <FaChevronUp className="w-4 h-4" />
+            ) : (
+              <FaChevronDown className="w-4 h-4" />
+            )}
+          </Button>
+
+          {/* Collapsible Content */}
+          {showSeasonalPricing && (
+            <div className="mt-2 p-4 bg-gradient-to-r from-blue-50 to-teal-50 rounded-lg border border-blue-100 animate-fade-in">
+              {/* September 1-15 Pricing */}
+              <div className="mb-3">
+                <div className="flex items-center justify-between mb-2">
+                  <div className="seasonal-pricing-date">
+                    {t.apartments.september1to15}
+                  </div>
+                  <div className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full font-medium">
+                    {t.apartments.reduced}
+                  </div>
+                </div>
+                <div className="text-center">
+                  <div className="flex items-center justify-center gap-2">
+                    <span className="seasonal-pricing-price line-through text-gray-500">
+                      {apartment.pricedz} DA
+                    </span>
+                    <span className="seasonal-pricing-price">
+                      {apartment.type === 'Studio' ? '7000 DA' :
+                       apartment.type === 'F2' ? '8000 DA' :
+                       apartment.type === 'F2-jacuzzi' ? '13000 DA' :
+                       apartment.type === 'F3' ? '20000 DA' :
+                       'N/A'} / {t.booking.summary.night}
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* September 15-End Pricing with Discount Badge */}
+              <div>
+                <div className="flex items-center justify-between mb-2">
+                  <div className="seasonal-pricing-date">
+                    {t.apartments.september15toEnd}
+                  </div>
+                  <div className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full font-medium">
+                    {t.apartments.veryReduced}
+                  </div>
+                </div>
+                <div className="text-center">
+                  <div className="flex items-center justify-center gap-2">
+                    <span className="seasonal-pricing-price line-through text-gray-500">
+                      {apartment.type === 'Studio' ? '7000 DA' :
+                       apartment.type === 'F2' ? '8000 DA' :
+                       apartment.type === 'F2-jacuzzi' ? '13000 DA' :
+                       apartment.type === 'F3' ? '20000 DA' :
+                       'N/A'}
+                    </span>
+                    <span className="seasonal-pricing-price">
+                      {apartment.type === 'Studio' ? '5500 DA' :
+                       apartment.type === 'F2' ? '6000 DA' :
+                       apartment.type === 'F2-jacuzzi' ? '12000 DA' :
+                       apartment.type === 'F3' ? '17000 DA' :
+                       'N/A'} / {t.booking.summary.night}
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* October Onwards Pricing */}
+              <div className="mt-3 pt-3 border-t border-blue-200">
+                <div className="flex items-center justify-between mb-2">
+                  <div className="seasonal-pricing-date">
+                    {t.apartments.fromOctober}
+                  </div>
+                  <div className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full font-medium">
+                    {t.apartments.extremelyReduced}
+                  </div>
+                </div>
+                <div className="text-center">
+                  <span className="seasonal-pricing-price">
+                    {apartment.type === 'Studio' ? '4500 DA' :
+                     apartment.type === 'F2' ? '5000 DA' :
+                     apartment.type === 'F2-jacuzzi' ? '10000 DA' :
+                     apartment.type === 'F3' ? '13000 DA' :
+                     'N/A'} / {t.booking.summary.night}
+                  </span>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
         <hr className="my-4" />
         <div className="flex justify-center gap-4">
