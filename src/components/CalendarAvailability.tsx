@@ -220,7 +220,7 @@ export default function CalendarAvailability({ apartmentId, label, availableLabe
   const getLocale = () => {
     switch (language) {
       case 'fr': return 'fr-FR';
-      case 'ar': return 'ar-SA';
+      case 'ar': return 'ar-EG'; // Use Egyptian Arabic locale for Gregorian calendar
       default: return 'en-US';
     }
   };
